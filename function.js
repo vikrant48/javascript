@@ -51,7 +51,7 @@ console.log(fun2("vikrant")) // my name is vikrant
  }*/
  let arrowfun = (num1 ,num2) => num1+num2; // this work only for one statement otherwise use {}
 //  let arrowfun = (num1 ,num2) => (num1+num2); // no need to write return but if we use {} then return should be there 
-
+// let arrowfun = () => ({name: vikrant}); //to return an object 
  console.log(arrowfun(4,7))
 
  let arrowfun2 = (name) => {
@@ -61,3 +61,24 @@ console.log(fun2("vikrant")) // my name is vikrant
     console.log(this.mn) // undefined 
  }
  arrowfun2("vikrant")
+
+// IIFE
+//  (fun_stru)(to call)
+ /*three type 
+  1)(function fun_name() {
+    // …
+  })(); // here ; is mendatry to stop iif 
+  
+  2)((parameter...) => {
+    // …
+  })(argument...);
+  
+  3)(async () => {
+    // …
+  })();
+Use Cases Of IIFE
+Avoid polluting the global namespace.
+To create closures in JavaScript.
+IIFE is used to create private and  public variables and methods.
+It is used to execute the async and await function.
+It is used to work with require function.*/
