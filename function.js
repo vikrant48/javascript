@@ -13,14 +13,17 @@
    3)let function_name = (argument1, argument2 ,..) => expression */
 
 function fun1(para1 ,para2 ){
-     return para1+para2
+    //console.log(this) will display current contest from this scope 
+    return para1+para2
+
 }
+console.log(this) // {} in node invirnment and window in browser invirnment 
 console.log(fun1()) // NaN
-console.log(fun1(2,7)) // 9
-console.log(fun1(5)) // NaN
-console.log(fun1(5,"five")) //5five
-console.log(fun1("six" ,6)) //six6
-console.log(fun1(2,4,6)) //6 it consider only first two
+// console.log(fun1(2,7)) // 9
+// console.log(fun1(5)) // NaN
+// console.log(fun1(5,"five")) //5five
+// console.log(fun1("six" ,6)) //six6
+// console.log(fun1(2,4,6)) //6 it consider only first two
 
 function fun2(name)
 {
