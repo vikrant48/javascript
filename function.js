@@ -13,17 +13,19 @@
    3)let function_name = (argument1, argument2 ,..) => expression */
 
 function fun1(para1 ,para2 ){
-    //console.log(this) will display current contest from this scope 
+    const name = "vikrant"
+    //console.log(this.name)  // undefined we can use this in object not in function
+    //console.log(this) will display current contest from this scope lots of data in case of function
     return para1+para2
 
 }
-console.log(this) // {} in node invirnment and window in browser invirnment 
+//console.log(this) // {} in node invirnment and window in browser invirnment 
 console.log(fun1()) // NaN
-// console.log(fun1(2,7)) // 9
-// console.log(fun1(5)) // NaN
-// console.log(fun1(5,"five")) //5five
-// console.log(fun1("six" ,6)) //six6
-// console.log(fun1(2,4,6)) //6 it consider only first two
+console.log(fun1(2,7)) // 9
+console.log(fun1(5)) // NaN
+console.log(fun1(5,"five")) //5five
+console.log(fun1("six" ,6)) //six6
+console.log(fun1(2,4,6)) //6 it consider only first two
 
 function fun2(name)
 {
@@ -48,4 +50,14 @@ console.log(fun2("vikrant")) // my name is vikrant
      if more the one expression then use {}
  }*/
  let arrowfun = (num1 ,num2) => num1+num2; // this work only for one statement otherwise use {}
+//  let arrowfun = (num1 ,num2) => (num1+num2); // no need to write return but if we use {} then return should be there 
+
  console.log(arrowfun(4,7))
+
+ let arrowfun2 = (name) => {
+    const mn= "vachna"
+    console.log(this) // {}  but not in normal function 
+    console.log(name) //vikrant
+    console.log(this.mn) // undefined 
+ }
+ arrowfun2("vikrant")
