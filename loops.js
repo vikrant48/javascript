@@ -1,4 +1,4 @@
-// for of and for in 
+// for of and for in  and foreach
 // for of 
 /*The for...of statement creates a loop Iterating over iterable objects 
 (including Array, string, Map, Set, arguments object and so on)
@@ -16,17 +16,37 @@ but not for map */
   statement....
 */
 
+//foreach array pr hi lga sakte hsi 
+/* It calls a provided callbackFn function once for each element in an array*** in ascending-index order.*/
+
+/*forEach(callbackFn)
+forEach(callbackFn, thisArg)
+
+object_name.forEach(function (variable){
+  statement...
+})
+
+object_name.forEach( () => {
+  statement...
+})
+*/
+
 //~~~~~~~~~~~~~~~~~~~array
-/*
+
 const myarr = [2,34,556,67655,3334,5554,45]
 for (const i of myarr) {
-    console.log(i) // print valus
+  console.log(i) // print valus 
 }
 for (const i in myarr) {
-    console.log(i) //print keys
+  console.log(i) //print keys
+  console.log(myarr[i]) // print value
 }
-*/
+myarr.forEach((i)=>{
+  console.log(i) // print values 
+})
+
 // ~~~~~~~~~~~~~~~~~~~~map
+
 const mp = new Map()
 mp.set(1,'one')
 mp.set(2,'two')
@@ -40,9 +60,50 @@ for (const i of mp) {
 for (const [key,value] of mp) {
     console.log(`${key} - ${value}`)
 }
-for (const key in mp) {
-    console.log(key) // not irrtable  
+// for (const key in mp) {
+//     console.log(key) // not irrtable  
+// }
+mp.forEach((key)=>{
+  console.log(`${key}`) // print value 
+})
+
+
+//~~~~~~~~~~~~~~~~~~`object
+
+const myobj = {
+  key1 : 'value1',
+  key2 : 'value2',
+  key3 : 'value3'
 }
+
+console.log(myobj)
+// for (const i of myobj) { // here myobj is not iterable
+//   //console.log(i)
+// }
+for (const key in myobj) {
+  console.log(`${key} :- ${myobj[key]}`)
+}
+
+//~~~~~~~~~~~~array with objs
+
+const arrobj = [
+  {
+    name:"vikrant",
+    age:23
+  },
+  {
+    name:"vachana",
+    age:21
+  },
+  {
+    name:"sheetal",
+    age:23
+  }
+]
+
+arrobj.forEach((obj)=>{
+     console.log(obj.name)
+})
 
 
 
@@ -67,3 +128,15 @@ for (const i of arr) {
 }
 // Logs: 3 5 7
 */
+
+
+/*
+Falsy values
+The following values evaluate to false (also known as Falsy values):
+
+false
+undefined
+null
+0
+NaN
+the empty string ("")*/
