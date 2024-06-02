@@ -17,7 +17,9 @@ but not for map */
 */
 
 //foreach array pr hi lga sakte hsi 
-/* It calls a provided callbackFn function once for each element in an array*** in ascending-index order.*/
+/* It calls a provided callbackFn function once for each element in an array*** in ascending-index order
+ forEach() always returns undefined*** and is not chainable. 
+.*/
 
 /*forEach(callbackFn)
 forEach(callbackFn, thisArg)
