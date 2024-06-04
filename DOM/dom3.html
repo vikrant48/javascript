@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM edit and remove </title>
+</head>
+<body style="background-color: rgb(41, 35, 35); color:bisque">
+    <div class="parent_week" >
+        <div class="child_day">monday</div>
+        <div class="child_day">tuesday</div>
+        <div class="child_day">wednesday</div>
+        <div class="child_day">thursday</div>
+    </div>
+</body>
+<script>
+    function addday(dayname){
+        const day = document.createElement('div')
+        day.setAttribute('class', 'child_day')
+        day.innerHTML=`${dayname}` // trevel whole tree 
+        document.querySelector('.parent_week').appendChild(day)
+    }
+    addday("friday")
+    addday('suterday')
+
+    function optaddday(dayname){
+       const day = document.createElement('div')
+       day.appendChild(document.createTextNode(dayname))// optmize way
+       document.querySelector('.parent_week').appendChild(day)
+    }
+    optaddday('sunday')
+
+    // edit 
+    const daytoreplace = document.querySelector('div:nth-child(2)')//div ka first child main div hai jisme sabhi div aate hai and second tuesday hai monday ka pta nhi 
+    console.log(daytoreplace)
+    //approch 1 by inner html 
+    //daytoreplace.innerHTML = 'repalced tuesday' 
+
+    //approch 2 by replacewith ( create a new child and then replace )
+    const newchild = document.createElement('div')
+    newchild.textContent = 'repalced_tuesday'
+    daytoreplace.replaceWith(newchild)
+
+    //approch 3 here we cahve to give full html
+    //daytoreplace.outerHTML = '<div class ="child_day"> replaced_tuesday with outerhtml</div> '
+
+    //remove 
+    const last_child = document.querySelector('div:last-child')//here we cant give space after:
+    last_child.remove()
+
+</script>
+</html>
