@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<!-- html collection and node list are not pure array but we can convert then and use array prototype on them   -->
+<body>
+    <h3 class="mainhead">DOM LEARN</h3>
+    <div class="cont">
+        <p class="first" id="idname">my name is</p>
+        <p id="firstid">vikrant chauahan</p>
+    </div>
+    <p id="ot"></p>
+    <script>
+        const temp = document.getElementById("idname")
+        const temp1 = document.getElementsByClassName("first").innerHTML // here temp1 is undefined why 
+        console.log(temp1)
+        const temp2 = document.getElementById("firstid")
+        document.getElementById("ot").innerHTML = temp.innerHTML + " " + temp2.innerHTML 
+        /*attribute aalways return value if you give keys ( getAttribute, setAttribute ) */
+        document.getElementById('idname').setAttribute('class', 'class_name') // overwrite the data
+        /*innerHTML,innertext,textcontent me diffarence kya hai
+        innertext - return only visiable content 
+        innercontent - return visiable + hidden content 
+        innerHTML - provide all html inside the all content 
+        */
+        document.querySelector('p') //return first p from the body 
+        /* by classname we are getting htmlcollection and my idname node list from quaryslectorAll
+        so on htmlcoll. convert in array by (Array.from(htmlcoll_var/nodelist_var)) and use array property  
+        */
+        
+    </script>
+</body>
+</html>

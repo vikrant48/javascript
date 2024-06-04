@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM about paraent child relationship</title>
+</head>
+<body style="background-color: rgb(41, 35, 35); color:bisque">
+    <div class="parent_week" >
+        <div class="child_day">monday</div>
+        <div class="child_day">tuesday</div>
+        <div class="child_day">wednesday</div>
+        <div class="child_day">thursday</div>
+    </div>
+</body>
+<script>
+    // about created element******
+    const parent = document.querySelector('.parent_week')
+    console.log(parent)
+    //parent to child
+    console.log(parent.children)//html coll 
+    console.log(parent.children[2].innerHTML)//wednesday
+
+    //here we can use for(but not foreach) to acsess all child of html coll
+    for (let i=0 ;i< parent.children.lenght;i++){
+        console.log(parent.children[i].innerHTML);
+        //dont know why its not working
+    }
+    parent.children[2].style.color = 'red'
+    console.log(parent.firstElementChild)
+    console.log(parent.lastElementChild)
+
+    //child to parent
+    const child = document.querySelector('.child_day')
+    console.log(child)
+    console.log(child.innerHTML)
+    console.log(child.parentElement)
+    console.log(child.nextElementSibling)
+    // childnode 
+    console.log('NODES : ', parent.childNodes)// it inclue all node bts
+
+    // create element 
+    const created_element = document.createElement('div')
+    console.log(created_element)
+    created_element.className = 'crclass'
+    created_element.id = 'crid'
+    created_element.setAttribute('tital' , 'generated dom parent and child')//here we can set classname ,id and many things
+    created_element.style.backgroundColor = 'green'
+    created_element.style.color = 'white'
+    //created_element.innerText = 'friday'  //another way to writr text
+    const addtext = document.createTextNode('Friday')
+    created_element.appendChild(addtext)
+
+    document.body.appendChild(created_element)
+
+</script>
+</html>
