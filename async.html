@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async Timeout function </title>
+</head>
+<body>
+    <h1>setTimeOut</h1>
+    <h2 id="text">text</h2>
+    <button id="stop">stop</button>
+    <hr>
+    
+    <h1>setInterval</h1>
+    <h2 id="text2"></h2>
+    <button id="start">start</button>
+    <button id="stop1">stop</button>
+
+    
+</body>
+<script>
+
+    //*************settimeout**************
+    const text = ()=>{
+        document.getElementById('text').innerHTML = 'after 2 sec'
+    } 
+    const settime = setTimeout(text ,2000)
+
+    document.getElementById('stop').addEventListener('click',()=>{
+        clearTimeout(settime)
+    })
+
+    //*****************timeinterval**********
+    let int = 1;
+    const print = ()=>{
+       document.getElementById('text2').innerHTML += `${int++},`
+    }
+    let stopint 
+    document.getElementById('start').addEventListener('click',()=>{
+        stopint = setInterval(print ,1000)
+    })
+    
+    document.getElementById('stop1').addEventListener('click',()=>{
+        clearInterval(stopint)
+    })
+
+
+
+
+
+
+
+</script>
+</html>
