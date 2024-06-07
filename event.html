@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li> <!-- onclick="alert('this is owl')" after alt -->
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+        
+   </div>
+</body>
+<script>
+    const owlimg = document.querySelector("#owl")
+    const img = document.querySelector("#images")
+
+    //approch 1
+    /*document.querySelector("#owl").onclick = ()=>{
+        alert(" this ia owl 1")
+    }*/
+
+    // approch 2  give other option to like keydown and others too***
+    /*owl.addEventListener('click' ,(e)=>{
+        alert(" this ia owl 2") 
+    },false) */ // by default its false called event propogation
+
+    /* approch 3
+    owl.attachElement('click' , ()=>{
+        alert("this is owl 3")
+    })    why its not work */
+
+    //event 
+
+    /*to raed type key, timestamp , defaultPrevented
+     target , toElement ,scrElement,currentTarget,
+     clintY, clintX, screenX,screenY ,keycode,funkey*/
+
+    /*owl.addEventListener('click' ,(e)=>{
+        console.log(e)
+    },false)*/
+
+    //event propegation (false- event bubbling up{centre to top} ,true- event captureing {top to centre }) if both are present the true will excute first  
+    img.addEventListener('click' ,(e)=>{
+        console.log  ("clicked at f img")
+    },false)
+    owlimg.addEventListener('click' ,(e)=>{
+        console.log  ("clicked at f owl")
+    },false)
+    //clicked at owl then clicked at a img if u clicked at owl (center to top)
+
+    owlimg.addEventListener('click' ,(e)=>{
+        e.stopPropagation()  // stopPropagation will stop bubbling and capturing propagation
+        console.log  ("clicked at  p owl")
+    },false)
+    // only clicked at owl becz propagetion will stop to go up in case of bubbling 
+    
+    img.addEventListener('click' ,(e)=>{
+        console.log  ("clicked at t img")
+    },true)
+    owlimg.addEventListener('click' ,(e)=>{
+        console.log  ("clicked at t owl")
+    },true)
+    //clicked at img then clicked at owl if u clicked at owl (top to center)
+
+    //preventdefault
+    document.querySelector('#google').addEventListener('click', (e)=>{
+        e.preventDefault()
+        console.log('googl clicked')
+    },false)
+    //  clicked at t img -> googl clicked -> clicked at f img   will be output *** even we apply preventdefault
+
+    //delete any images
+    img.addEventListener('click',(e)=>{
+        let removeit = e.target.parentNode
+        //here parantNode will give whole li content
+        console.log(removeit)
+        if(e.target.tagName === 'IMG'){
+            removeit.remove()
+        }
+        
+        //why i cant remove owl img becoz of stoppropegation
+    },false)
+
+
+</script>
+</html>
