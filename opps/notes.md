@@ -47,11 +47,12 @@ Return Value: If the constructor function returns an object explicitly, that obj
 
 # different btn __proto__ and prototype
 ```
-__proto__ -  ->Property of individual objects. It is used to link objects to their prototype.
+__proto__ -  ->__proto__ is a legacy feature for accessing and modifying an object's prototype.
+            ->Property of individual objects. It is used to link objects to their prototype.
              ->two object ko jodane ka kaam krta hai jisase ek ki propery and method (inherit ) ho sake 
-prototype   -> Property of constructor functions (and classes). It is used to define properties and methods that should be inherited
+prototype   -> Property of constructor functions (and classes) not on object litaral. It is used to define properties and methods that should be inherited
                by instances.
-            ->ye ek object ke udar ek aur user define function/ propery add kr do jo ki all instances create by user use kr sakta hai 
+            ->ye ek  constructor functions (and classes) ke udar ek aur user define function/ propery /method add kr do jo ki all instances create by user use kr sakta hai 
 
 __proto__
 Definition: __proto__ is an internal property of an object that points to its prototype. It is part of the object's hidden, internal state.
