@@ -122,3 +122,70 @@ myInstance.greet(); // Output: Hello, my name is Alice.
 MyClass.staticMethod(); // Output: This is a static method.
 
 ```
+
+# call , apply and bind 
+## call
+```
+The call method calls a function with a given this value and arguments provided individually.
+syntex-
+functionName.call(thisArg, arg1, arg2, ...);
+```
+```javascript
+function greet(greeting, punctuation) {
+    console.log(greeting + ', ' + this.name + punctuation);
+}
+
+const person = {
+    name: 'Alice'
+};
+
+greet.call(person, 'Hello', '!'); // Hello, Alice!
+
+```
+
+## apply
+```
+The apply method is similar to call, but it takes arguments as an array.
+syntex-
+functionName.apply(thisArg, [arg1, arg2, ...]);
+
+```
+## bind
+```
+The bind method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called.
+syntex-
+const boundFunction = functionName.bind(thisArg, arg1, arg2, ...);
+
+```
+```javascript
+function greet(greeting, punctuation) {
+    console.log(greeting + ', ' + this.name + punctuation);
+}
+
+const person = {
+    name: 'Alice'
+};
+
+const boundGreet = greet.bind(person, 'Hello');
+boundGreet('!'); // Hello, Alice!
+
+```
+```
+Differences Between call and bind
+
+Immediate Invocation:
+
+call invokes the function immediately with the specified this context and arguments.
+bind returns a new function with the specified this context and initial arguments, but it does not invoke the function immediately.
+
+Use Case:
+
+Use call when you want to call a function immediately and explicitly set this.
+Use bind when you want to create a new function with a specific this context and optionally pre-filled arguments, which you can call later.
+
+Summary
+
+call and apply are used to call a function immediately with a specific this value and arguments.
+bind is used to create a new function with a specific this value and optional pre-filled arguments, which can be called later.
+apply is similar to call, but it takes an array of arguments instead of listing them individually.
+```
