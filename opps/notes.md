@@ -189,3 +189,16 @@ call and apply are used to call a function immediately with a specific this valu
 bind is used to create a new function with a specific this value and optional pre-filled arguments, which can be called later.
 apply is similar to call, but it takes an array of arguments instead of listing them individually.
 ```
+# property attributes
+```
+the properties writable, enumerable, and configurable are attributes of object properties that define how those properties can be interacted with. These attributes are part of the property descriptor, which you can set and get using the Object.defineProperty and Object.getOwnPropertyDescriptor methods, respectively.
+
+writable 
+Determines if the value of the property can be changed.
+
+enumerable
+Determines if the property shows up during enumeration of the properties on the object (e.g., in a for...in loop or Object.keys).
+
+configurable
+Description: Determines if the property descriptor can be changed and if the property can be deleted from the object.
+```
