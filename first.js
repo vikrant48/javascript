@@ -12,7 +12,7 @@ console.table([accountId, accountemail, password, accountcity, accountver])
 
 // null - standalone value 
 // undefined - abhi value assign nhi hua hai 
-// typeof null - object 
+// typeof null - object ****
 // typeof undefined - undefined
 
 // valse conversion 
@@ -36,7 +36,7 @@ let valueinNumber5 = Number(value_2)
 let valueinNumber6 = Number(value_3)
 // this will conver ant datatype into number type but its cant change their value in number 
 
-console.log("befor converting in number")
+console.log("after converting in number")
 console.table([typeof valueinNumber1, typeof valueinNumber2, typeof valueinNumber3,
     typeof valueinNumber4, typeof valueinNumber5, typeof valueinNumber6])
 

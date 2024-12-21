@@ -37,7 +37,8 @@ console.log(teststring.substring(0, 6))//last index not include if you give
 console.log(teststring.slice(-8, 5))//here you can give negative but it will start from end 
 //extracts a section of this string and returns it as a new string, without modifying the original string.
 console.log(teststring.trim())//it will remove extra spaces from front and back return new string without modify original strings
-console.log(teststring)//*****all modificatin happen in stack or pass by value ******
 console.log(teststring.replace('_', '->'))//replase that  only first charact with given char  
-console.log(teststring.includes('->'))//this will tell that sub string is prasent or not
 console.log(teststring.split('_'))// will give a array for string 
+console.log(teststring.includes('->'))//this will tell that sub string is prasent or not
+console.log(teststring)//*****all modificatin happen in stack or pass by value ******
+
