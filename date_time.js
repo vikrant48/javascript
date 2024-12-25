@@ -1,14 +1,14 @@
 //*******************date******************/
 let mydate = new Date()//gives in not readable
 console.log(typeof(mydate)) //object
-console.log(mydate.toString())
-console.log(mydate.toISOString())
-console.log(mydate.toUTCString())
-console.log(mydate.toDateString())
-console.log(mydate.toLocaleString())
+console.log(mydate.toString()) // Tue Dec 24 2024 11:26:57 GMT+0530 (India Standard Time)
+console.log(mydate.toISOString()) // 2024-12-24T05:56:57.284Z
+console.log(mydate.toUTCString()) // Tue, 24 Dec 2024 05:56:57 GMT
+console.log(mydate.toDateString()) // Tue Dec 24 2024
+console.log(mydate.toLocaleString()) // 24/12/2024, 11:26:57 am
 console.log(mydate.toLocaleString('default',{ weekday: "long"}))//custmize date reprasentation
-console.log(mydate.toLocaleTimeString())
-console.log(mydate.toTimeString())
+console.log(mydate.toLocaleTimeString()) // 11:26:57 am
+console.log(mydate.toTimeString()) // 11:26:57 GMT+0530 (India Standard Time)
 
 //give date as input
 

@@ -47,7 +47,7 @@ const about_me = {
     "roll number": 163,
     branch: "ece",
     ismale: true,
-    20: 40,   
+    20:40,   
     //symbol
     [mysmbl1]: "mysymble1", // for making mysmbl1 ko string se symbol datatype key ko bracket me likho
     [mysmbl2]:"",
@@ -60,8 +60,8 @@ const about_me = {
         // inside the object area we can acces with this or with object_name both 
     },
     displayinfoofsymble: function(){
-       console.log(`dataypes:- ${typeof'name'},${typeof[20]}, ${typeof mysmbl1}, ${typeof [mysmbl2]},${typeof mysmbl2},${typeof mysmbl3}`);
-       console.log(`values:- ${this[mysmbl1]}, ${this.mysmbl2},${this[mysmbl2]},${ this[mysmbl3]}`);
+       console.log(`dataypes:- ${typeof 'name'},${typeof [20]}, ${typeof mysmbl1}, ${typeof mysmbl2},${typeof "mysmbl2"},${typeof mysmbl3}, ${typeof []}`);
+       console.log(`values:- 1 : ${this[mysmbl1]}, 2: ${this.mysmbl2}, 3: ${this[mysmbl2]}, 4: ${ this[mysmbl3]}`);
     },
     //nsted object 
     nsobject1: {
@@ -91,7 +91,7 @@ console.log(about_me[20]);
 console.log(about_me['20']); // here above both are give same result 
 
 console.log(about_me['name']);
-//console.log(about_me[name]); this will show error that name is not define 
+//console.log(about_me[name]); this will show error that name is not define becose when we use bracket then put key in camma "  "
 
 about_me.displayinfoofsymble();
 //console.log(about_me);
@@ -122,7 +122,7 @@ const target = { a: 1, b: 2 };
 const source1 = { c: 3, d: 4 };
 const source2 = { e: 5, f: 6 };
 
-const returnedTarget = Object.assign(target, source1, source2);  //assign returns the modified target object.
+const returnedTarget = Object.assign(target, source1, source2);  //assign returns the object with modified first object 
 console.log(returnedTarget);
 
 console.log(returnedTarget === target); // true 
@@ -137,15 +137,15 @@ console.log({...target,...source1,...source2}); //spread method
 // array of object
 const arrobj =[
     {
-        id:1,
+        id:0,
         name:'vikrant'
     },
     {
-        id:2,
+        id:1,
         name:'vachana'
     },
     {
-        id:3,
+        id:2,
         name:'chauhan'
     }
 ]

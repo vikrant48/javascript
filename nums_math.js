@@ -1,15 +1,17 @@
 // **************************number*******************
 const num = 12
-console.log(num) // here system define its datatype
-console.log(typeof(num))
+console.log(Number) // [Function: Number]
+console.log(typeof(Number)) // function
+console.log(num) 
+console.log(typeof(num)) // here system define its datatype
 
 const num2 = new Number(163000.879)//here we specily define datatype
 console.log(num2)
 
 console.log(num2.toString()) // it convert its datatyoe to string  then we can use all function of string on it
 console.log(num2.toFixed(2))//it will give up to 2 decimal number
-console.log(num2.toPrecision(3)) // give datatype as string
-console.log(typeof(num2.toPrecision(7)))
+console.log(num2.toPrecision(2)) // give datatype as string
+console.log(typeof(num2.toPrecision(2)))
 console.log(num2.toLocaleString('en-IN'))//it wil covert in rupees
 
 
@@ -17,7 +19,7 @@ console.log(num2.toLocaleString('en-IN'))//it wil covert in rupees
 const val1 = 33
 const val2 = 55
 
-console.log(Math)
+console.log(Math) // Object [Math] {}
 console.log(typeof(Math)) //object
 console.log(Math.abs(-3)) // absulute value 
 
