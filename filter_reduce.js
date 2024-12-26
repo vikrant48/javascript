@@ -25,6 +25,10 @@ const mptemp = myarr.map((i)=>{
     return i*10
 })
 
+console.log(mptemp)
+
+// filter and map are return the value 
+
 const chain = myarr.map((i)=>i*10)
                    .map((i)=>{return i+1}) // if you use {} then u must right return
                    .filter((i)=>i>30)
@@ -55,8 +59,8 @@ const initialValue = 0;
 const sumWithInitial = array1.reduce(
   (accumulator, currentValue) => {
 
-    console.log(`acc- ${accumulator},crrval-${currentValue},total:- ${accumulator+currentValue}`)
-    return accumulator + currentValue
+    console.log(`acc- ${accumulator},crrval-${currentValue},total:- ${-accumulator+currentValue}`)
+    return -accumulator + currentValue
 },
   initialValue
 );

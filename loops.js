@@ -35,17 +35,34 @@ object_name.forEach( () => {
 
 //~~~~~~~~~~~~~~~~~~~array
 
-const myarr = [2,34,556,67655,3334,5554,45]
+const myarr = [2,34,556]
+
 for (const i of myarr) {
   console.log(i) // print valus 
 }
 for (const i in myarr) {
-  console.log(i) //print keys
-  console.log(myarr[i]) // print value
+  // console.log(i) //print keys
+  // console.log(myarr[i]) // print value
+  console.log(`${i} -> ${myarr[i]}`)
 }
 myarr.forEach((i)=>{
   console.log(i) // print values 
 })
+
+//~~~~~~~~~~~~~~~~~~~~~~~string 
+
+const mystr = "vikrant"
+for (const i of mystr) {
+  console.log(i) // print valus 
+}
+for (const i in mystr) {
+  // console.log(i) //print keys
+  // console.log(mystr[i]) // print value
+  console.log(`${i} -> ${mystr[i]}`)
+}
+// mystr.forEach((i)=>{
+//   console.log(i) // mystr.forEach is not a function here we have to convert in arry then only we can use foreach 
+// })
 
 // ~~~~~~~~~~~~~~~~~~~~map
 
@@ -60,7 +77,7 @@ for (const i of mp) {
     //console.log(i) //return whole map 
 }
 for (const [key,value] of mp) {
-    console.log(`${key} - ${value}`)
+    console.log(`${key} -> ${value}`)
 }
 // for (const key in mp) {
 //     console.log(key) // not irrtable  
@@ -79,12 +96,18 @@ const myobj = {
 }
 
 console.log(myobj)
+
 // for (const i of myobj) { // here myobj is not iterable
 //   //console.log(i)
 // }
+
 for (const key in myobj) {
   console.log(`${key} :- ${myobj[key]}`)
 }
+
+// myobj.forEach((key)=>{
+//   console.log(key)  // myobj.forEach is not a function same issue as string 
+// })
 
 //~~~~~~~~~~~~array with objs
 
