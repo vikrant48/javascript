@@ -22,20 +22,22 @@
     console.log(parent.children[2].innerHTML)//wednesday
 
     //here we can use for(but not foreach) to acsess all child of html coll
-    for (let i=0 ;i< parent.children.lenght;i++){
+    for (let i=0 ;i< parent.children.length;i++){
         console.log(parent.children[i].innerHTML);
-        //dont know why its not working
     }
     parent.children[2].style.color = 'red'
-    console.log(parent.firstElementChild)
-    console.log(parent.lastElementChild)
+    console.log('First child:', parent.firstElementChild);
+    console.log('Last child:', parent.lastElementChild);
+    // console.log('nth child:', parent.children[n-1]);
 
     //child to parent
-    const child = document.querySelector('.child_day')
+    const child = document.querySelector('.child_day')// give  first one 
     console.log(child)
     console.log(child.innerHTML)
     console.log(child.parentElement)
     console.log(child.nextElementSibling)
+
+
     // childnode 
     console.log('NODES : ', parent.childNodes)// it inclue all node bts
 

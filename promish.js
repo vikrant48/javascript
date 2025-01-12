@@ -4,8 +4,7 @@ const promish1 = new Promise((resolve,reject)=>{
     setTimeout(() => {
         console.log('async task 1 comp ')
     },1000);
-     resolve() 
-    //its return type function when the Promise is resolved.
+     resolve()  //its return type function when the Promise is resolved.
     //without resolve then will not invoke
 })
 promish1.then(()=>{

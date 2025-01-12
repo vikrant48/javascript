@@ -4,6 +4,7 @@ function f1(username){
     console.log("f1 called")
 }
 function f2 (username,age){
+    // f1(username) // why i cant use 
     f1.call(this,username)
     this.age = age
 }
